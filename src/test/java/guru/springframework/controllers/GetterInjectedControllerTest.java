@@ -1,6 +1,6 @@
 package guru.springframework.controllers;
 
-import guru.springframework.services.GreetingServiceImpl;
+import guru.services.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ public class GetterInjectedControllerTest {
     private GetterInjectedController getterInjectedController;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         this.getterInjectedController = new GetterInjectedController();
         this.getterInjectedController.setGreetingService(new GreetingServiceImpl());
     }
