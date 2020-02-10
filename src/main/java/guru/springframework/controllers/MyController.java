@@ -1,6 +1,6 @@
 package guru.springframework.controllers;
 
-import guru.services.GreetingService;
+import guru.springframework.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller //Bean gerenciado pelo contexto do Spring - Vai criar uma instancia no contexto do Spring
