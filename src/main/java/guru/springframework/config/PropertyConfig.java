@@ -1,20 +1,14 @@
 package guru.springframework.config;
 
 import guru.springframework.examplebeans.FakeDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
+import guru.springframework.examplebeans.FakeJmsBroker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource("classpath:datasource.properties")
 public class PropertyConfig {
-
-    @Autowired
-    Environment env;
 
     @Value("${demo.username}")
     String user;
@@ -25,14 +19,33 @@ public class PropertyConfig {
     @Value("${demo.dburl}")
     String url;
 
+    @Value("${demo.jms.username}")
+    String userJms;
+
+    @Value("${demo.jms.password}")
+    String passwordJms;
+
+    @Value("${demo.jms.dburl}")
+    String urlJms;
+
     @Bean
     public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUser(env.getProperty("USERNAME"));
+        fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
 
         return fakeDataSource;
+    }
+
+    @Bean
+    public FakeJmsBroker fakeJmsBroker() {
+        FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
+        fakeJmsBroker.setUsername(userJms);
+        fakeJmsBroker.setPassword(passwordJms);
+        fakeJmsBroker.setUrl(urlJms);
+
+        return fakeJmsBroker;
     }
 
     @Bean
