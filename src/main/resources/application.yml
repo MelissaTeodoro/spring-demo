@@ -1,0 +1,5 @@
+demo:
+  jms:
+    username: JMS melissa
+    password: 1233
+    dburl: etrfdsf

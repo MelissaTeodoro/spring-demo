@@ -1,0 +1,35 @@
+# This is comments
+
+name: Mel
+  names:
+      - Mel
+      - John
+      - Chris
+
+pund_sign: "#"
+
+book:
+    author: Rick Mallth
+    publisher: random
+
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no #nO, FALSE, false
+
+string_val: "string values"
+
+colon_string: "String values: Strings"
+
+include_new_lines: |
+    rewrerew
+    dsfdser
+    effefe
+
+ignore_new_lines: >
+    this is
+    just line
+
