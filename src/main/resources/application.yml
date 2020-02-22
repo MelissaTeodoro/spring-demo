@@ -3,3 +3,11 @@ demo:
     username: JMS melissa
     password: 1233
     dburl: etrfdsf
+
+---
+spring:
+  profiles: de
+demo:
+  jms:
+    username: JMS melissa $$$ GERman
+
